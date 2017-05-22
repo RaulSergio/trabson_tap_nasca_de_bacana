@@ -14,7 +14,7 @@ public class ConexaoFactory {
 			Class.forName("org.postgresql.Driver");
 			
 			//Crie um conexao com o banco
-			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/usuariodb","postgres","12345678");
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/produtodb","postgres","123456");
 			
 			//Retorna conection
 			return connection;

@@ -2,7 +2,7 @@ package model;
 
 public class Produto {
 	
-	private int id;
+	private Integer id;
 	private String nome;
 	private double valor;
 	
@@ -16,7 +16,7 @@ public class Produto {
 	};
 	
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {
