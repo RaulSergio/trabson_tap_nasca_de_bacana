@@ -18,13 +18,13 @@ public class ProdutoRepositoryBanco implements ProdutoRepository {
 	private Connection conexao = ConexaoFactory.criarConexao();
 
 	@Override
-	public void cadastrar(Produto usuario) {
+	public void cadastrar(Produto prod) {
 		String sql = "insert into produto (nome,valor) values (?,?)";
 
 		try {
 			PreparedStatement ps = conexao.prepareStatement(sql);
-			ps.setString(1, usuario.getNome());
-			ps.setDouble(2, usuario.getValor());
+			ps.setString(1, prod.getNome());
+			ps.setDouble(2, prod.getValor());
 
 			ps.execute();
 
@@ -133,14 +133,14 @@ public class ProdutoRepositoryBanco implements ProdutoRepository {
 		return lista;
 	}
 	@Override
-	public void alterar(Produto usuario) {
+	public void alterar(Produto prod) {
 		String sql = "update produto set nome=?,valor=? where id=?";
 
 		try {
 			PreparedStatement ps = conexao.prepareStatement(sql);
-			ps.setString(1, usuario.getNome());
-			ps.setDouble(2, usuario.getValor());
-			ps.setInt(3, usuario.getId());
+			ps.setString(1, prod.getNome());
+			ps.setDouble(2, prod.getValor());
+			ps.setInt(3, prod.getId());
 
 			ps.execute();
 
